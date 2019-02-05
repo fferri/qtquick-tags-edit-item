@@ -32,11 +32,12 @@ Window {
         TextInput {
             text: "Type a tag here"
             selectByMouse: true
+            color: activeFocus ? "black" : "gray"
             onAccepted: {
                 modelTags.append({"text": text})
                 text = ""
             }
-            onFocusChanged: if(focus) selectAll(); else if(text == "") text = "Type a tag here";
+            onFocusChanged: if(focus) text = ""; else text = "Type a tag here";
         }
     }
 }
